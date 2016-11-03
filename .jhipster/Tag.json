@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "entry",
+            "otherEntityName": "entry",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tag"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161103031059",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "tag",
+    "pagination": "infinite-scroll"
+}

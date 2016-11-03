@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "entry",
+            "otherEntityName": "entry",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "blog"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "handle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161103025941",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "blog",
+    "pagination": "no"
+}
