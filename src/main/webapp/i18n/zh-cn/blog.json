@@ -18,8 +18,8 @@
             },
             "handle": "Handle",
             "name": "Name",
-            "user": "User",
-            "entry": "Entry"
+            "entry": "Entry",
+            "user": "User"
         }
     }
 }

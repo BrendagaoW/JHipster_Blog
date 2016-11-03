@@ -5,16 +5,16 @@
         .module('blogApp')
         .controller('BlogDialogController', BlogDialogController);
 
-    BlogDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Blog', 'User', 'Entry'];
+    BlogDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Blog', 'Entry', 'User'];
 
-    function BlogDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Blog, User, Entry) {
+    function BlogDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Blog, Entry, User) {
         var vm = this;
 
         vm.blog = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.users = User.query();
         vm.entries = Entry.query();
+        vm.users = User.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

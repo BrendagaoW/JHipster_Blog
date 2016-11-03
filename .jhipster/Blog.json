@@ -2,20 +2,20 @@
     "fluentMethods": true,
     "relationships": [
         {
+            "relationshipName": "entry",
+            "otherEntityName": "entry",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "blog"
+        },
+        {
             "relationshipName": "user",
             "otherEntityName": "user",
             "relationshipType": "many-to-one",
             "relationshipValidateRules": [
                 "required"
             ],
-            "otherEntityField": "id",
+            "otherEntityField": "firstName",
             "ownerSide": true
-        },
-        {
-            "relationshipName": "entry",
-            "otherEntityName": "entry",
-            "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "blog"
         }
     ],
     "fields": [

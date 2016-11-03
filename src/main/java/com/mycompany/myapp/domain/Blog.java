@@ -35,14 +35,14 @@ public class Blog implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToOne
-    @NotNull
-    private User user;
-
     @OneToMany(mappedBy = "blog")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Entry> entries = new HashSet<>();
+
+    @ManyToOne
+    @NotNull
+    private User user;
 
     public Long getId() {
         return id;
@@ -78,19 +78,6 @@ public class Blog implements Serializable {
         this.name = name;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public Blog user(User user) {
-        this.user = user;
-        return this;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Set<Entry> getEntries() {
         return entries;
     }
@@ -114,6 +101,19 @@ public class Blog implements Serializable {
 
     public void setEntries(Set<Entry> entries) {
         this.entries = entries;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Blog user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

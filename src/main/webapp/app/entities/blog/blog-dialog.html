@@ -14,19 +14,6 @@
                     ng-model="vm.blog.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="blogApp.blog.name" for="field_name">Name</label>
-            <input type="text" class="form-control" name="name" id="field_name"
-                   ng-model="vm.blog.name"
-                   required />
-            <div ng-show="editForm.name.$invalid">
-                <p class="help-block"
-                   ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-
-        <div class="form-group">
             <label class="control-label" data-translate="blogApp.blog.handle" for="field_handle">Handle</label>
             <input type="text" class="form-control" name="handle" id="field_handle"
                     ng-model="vm.blog.handle"
@@ -38,10 +25,22 @@
                 </p>
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="blogApp.blog.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.blog.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
 
         <div class="form-group">
             <label data-translate="blogApp.blog.user" for="field_user">User</label>
-            <select class="form-control" id="field_user" name="user" ng-model="vm.blog.user" ng-options="user as user.id for user in vm.users track by user.id" required>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.blog.user" ng-options="user as user.firstName for user in vm.users track by user.id" required>
                 <option value=""></option>
             </select>
         </div>
